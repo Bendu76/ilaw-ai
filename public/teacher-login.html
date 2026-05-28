@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Teacher Login</title>
+
+</head>
+
+<body>
+
+  <h1>Teacher Login</h1>
+
+  <input
+    type="email"
+    id="email"
+    placeholder="Email">
+
+  <br><br>
+
+  <input
+    type="password"
+    id="password"
+    placeholder="Password">
+
+  <br><br>
+
+<button
+  type="button"
+  onclick="login()">
+
+  Login
+
+</button>
+
+  <script>
+
+    async function login() {
+
+      const email =
+        document.getElementById("email").value;
+
+      const password =
+        document.getElementById("password").value;
+
+      const response =
+        await fetch(
+          "http://localhost:3000/auth/login",
+          {
+
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body: JSON.stringify({
+
+              email,
+              password
+
+            })
+
+          }
+        );
+
+      const data =
+        await response.json();
+
+      alert(data.message);
+
+    }
+
+  </script>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
