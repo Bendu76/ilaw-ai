@@ -83,7 +83,7 @@ async function register() {
 
     const response =
       await fetch(
-        "http://127.0.0.1:3000/auth/register",
+        "https://ilaw-ai.onrender.com/auth/register",
         {
 
           method: "POST",
@@ -158,7 +158,7 @@ async function login() {
 
     const response =
       await fetch(
-        "http://127.0.0.1:3000/auth/login",
+        "https://ilaw-ai.onrender.com/auth/login",
         {
 
           method: "POST",
@@ -296,7 +296,7 @@ async function generateLessonPlan() {
 
   const response =
     await fetch(
-      "http://127.0.0.1:3000/generate",
+      "https://ilaw-ai.onrender.com/generate",
       {
 
         method: "POST",
