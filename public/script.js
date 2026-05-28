@@ -1,4 +1,3 @@
-```js
 // GENERATE LESSON PLAN
 
 async function generateLessonPlan() {
@@ -76,7 +75,6 @@ async function generateLessonPlan() {
       document.getElementById(
         "output"
       ).innerHTML =
-
         "<h2>Generation Failed.</h2>";
 
       return;
@@ -100,9 +98,13 @@ async function generateLessonPlan() {
         "output"
       ).innerHTML =
 
-        previewContent +
-
         `
+        <div style="
+          white-space: pre-wrap;
+          line-height: 1.6;
+        ">
+          ${previewContent}
+        </div>
 
         <div
           style="
@@ -112,7 +114,8 @@ async function generateLessonPlan() {
             border:1px solid #ffeeba;
             border-radius:10px;
             text-align:center;
-          ">
+          "
+        >
 
           <h2>
             🔒 Full ILAW Locked
@@ -126,8 +129,7 @@ async function generateLessonPlan() {
           <button
 
             onclick="
-              window.location.href=
-              'payment.html'
+              window.location.href='payment.html'
             "
 
             style="
@@ -146,7 +148,6 @@ async function generateLessonPlan() {
           </button>
 
         </div>
-
         `;
 
       return;
@@ -208,10 +209,8 @@ async function generateLessonPlan() {
     document.getElementById(
       "output"
     ).innerHTML =
-
       "<h2>Server Error.</h2>";
 
   }
 
 }
-```
