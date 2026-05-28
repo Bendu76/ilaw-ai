@@ -1,5 +1,17 @@
 // GENERATE LESSON PLAN
 
+// LOGIN PROTECTION
+
+const token =
+  localStorage.getItem("token");
+
+if (!token) {
+
+  window.location.href =
+    "teacher-login.html";
+
+}
+
 async function generateLessonPlan() {
 
   try {
@@ -66,7 +78,22 @@ async function generateLessonPlan() {
     const data =
       await response.json();
 
+// SAVE LOGIN SESSION
 
+localStorage.setItem(
+  "token",
+  data.token
+);
+
+localStorage.setItem(
+  "credits",
+  data.credits
+);
+
+localStorage.setItem(
+  "isPaid",
+  data.isPaid
+);
 
     // CHECK IF AI RETURNED RESULT
 
