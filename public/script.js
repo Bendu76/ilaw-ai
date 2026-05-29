@@ -1,16 +1,142 @@
-// GENERATE LESSON PLAN
+```js
+// ========================
+// REGISTER
+// ========================
 
-// LOGIN PROTECTION
+async function register() {
 
-const token =
-  localStorage.getItem("token");
+  const fullname =
+    document.getElementById("fullname").value;
 
-if (!token) {
+  const email =
+    document.getElementById("email").value;
 
-  window.location.href =
-    "teacher-login.html";
+  const password =
+    document.getElementById("password").value;
+
+  const response =
+    await fetch(
+      "https://ilaw-ai.onrender.com/auth/register",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+
+          fullname,
+          email,
+          password
+
+        })
+      }
+    );
+
+  const data =
+    await response.json();
+
+  alert(data.message);
+
+  if (data.success) {
+
+    window.location.href =
+      "teacher-login.html";
+
+  }
 
 }
+
+
+// ========================
+// LOGIN
+// ========================
+
+async function login() {
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  const response =
+    await fetch(
+      "https://ilaw-ai.onrender.com/auth/login",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+
+          email,
+          password
+
+        })
+      }
+    );
+
+  const data =
+    await response.json();
+
+  alert(data.message);
+
+  if (data.success) {
+
+    localStorage.setItem(
+      "token",
+      data.token
+    );
+
+    localStorage.setItem(
+      "credits",
+      data.credits
+    );
+
+    localStorage.setItem(
+      "isPaid",
+      data.isPaid
+    );
+
+    window.location.href =
+      "index.html";
+
+  }
+
+}
+
+
+// ========================
+// LOGIN PROTECTION
+// ========================
+
+if (
+  window.location.pathname
+    .includes("index.html")
+) {
+
+  const token =
+    localStorage.getItem("token");
+
+  if (!token) {
+
+    window.location.href =
+      "teacher-login.html";
+
+  }
+
+}
+
+
+// ========================
+// GENERATE LESSON PLAN
+// ========================
 
 async function generateLessonPlan() {
 
@@ -18,42 +144,45 @@ async function generateLessonPlan() {
 
     let credits =
       parseInt(
-        localStorage.getItem("credits")
+        localStorage.getItem(
+          "credits"
+        )
       ) || 0;
 
     let isPaid =
-      localStorage.getItem("isPaid");
-
-
-
-    // SHOW LOADING
+      localStorage.getItem(
+        "isPaid"
+      );
 
     document.getElementById(
       "output"
     ).innerHTML =
       "<h2>Generating ILAW Lesson Plan...</h2>";
 
-
-
     const grade =
-      document.getElementById("grade").value;
+      document.getElementById(
+        "grade"
+      ).value;
 
     const subject =
-      document.getElementById("subject").value;
+      document.getElementById(
+        "subject"
+      ).value;
 
     const topic =
-      document.getElementById("topic").value;
+      document.getElementById(
+        "topic"
+      ).value;
 
     const sessions =
-      document.getElementById("sessions").value;
-
-
+      document.getElementById(
+        "sessions"
+      ).value;
 
     const response =
       await fetch(
         "https://ilaw-ai.onrender.com/generate",
         {
-
           method: "POST",
 
           headers: {
@@ -69,33 +198,11 @@ async function generateLessonPlan() {
             sessions
 
           })
-
         }
       );
 
-
-
     const data =
       await response.json();
-
-// SAVE LOGIN SESSION
-
-localStorage.setItem(
-  "token",
-  data.token
-);
-
-localStorage.setItem(
-  "credits",
-  data.credits
-);
-
-localStorage.setItem(
-  "isPaid",
-  data.isPaid
-);
-
-    // CHECK IF AI RETURNED RESULT
 
     if (!data.result) {
 
@@ -108,16 +215,11 @@ localStorage.setItem(
 
     }
 
-
-
-    // PREVIEW CONTENT
-
     let previewContent =
-      data.result.substring(0, 1500);
-
-
-
-    // FREE USER = PREVIEW ONLY
+      data.result.substring(
+        0,
+        1500
+      );
 
     if (isPaid !== "true") {
 
@@ -125,109 +227,38 @@ localStorage.setItem(
         "output"
       ).innerHTML =
 
-        `
-        <div style="
-          white-space: pre-wrap;
-          line-height: 1.6;
-        ">
-          ${previewContent}
-        </div>
+        previewContent +
 
-        <div
-          style="
-            margin-top:30px;
-            padding:20px;
-            background:#fff3cd;
-            border:1px solid #ffeeba;
-            border-radius:10px;
-            text-align:center;
+        `
+        <hr>
+
+        <h2>
+          🔒 Full ILAW Locked
+        </h2>
+
+        <p>
+          Purchase credits to unlock
+          full lesson plan and download.
+        </p>
+
+        <button
+          onclick="
+            window.location.href=
+            'payment.html'
           "
         >
-
-          <h2>
-            🔒 Full ILAW Locked
-          </h2>
-
-          <p>
-            Purchase credits to unlock
-            full lesson plan and download.
-          </p>
-
-          <button
-
-            onclick="
-              window.location.href='payment.html'
-            "
-
-            style="
-              padding:15px 25px;
-              background:green;
-              color:white;
-              border:none;
-              border-radius:5px;
-              cursor:pointer;
-            "
-
-          >
-
-            Buy Credits
-
-          </button>
-
-        </div>
+          Buy Credits
+        </button>
         `;
 
       return;
 
     }
 
-
-
-    // CHECK CREDITS
-
-    if (credits <= 0) {
-
-      alert(
-        "No credits remaining."
-      );
-
-      window.location.href =
-        "payment.html";
-
-      return;
-
-    }
-
-
-
-    // FULL CONTENT FOR PAID USERS
-
     document.getElementById(
       "output"
     ).innerHTML =
       data.result;
-
-
-
-    // DEDUCT CREDIT
-
-    credits--;
-
-
-
-    localStorage.setItem(
-      "credits",
-      credits
-    );
-
-
-
-    // UPDATE DISPLAY
-
-    document.getElementById(
-      "creditsDisplay"
-    ).innerText =
-      "Credits: " + credits;
 
   } catch (error) {
 
@@ -241,3 +272,4 @@ localStorage.setItem(
   }
 
 }
+```
