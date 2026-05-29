@@ -1,205 +1,242 @@
-const express =
-  require("express");
+```js
+const express = require("express");
+const router = express.Router();
 
-const router =
-  express.Router();
-
-const bcrypt =
-  require("bcryptjs");
-
-const jwt =
-  require("jsonwebtoken");
-
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const User = require("../models/User.js");
 
 
+// =========================
 // REGISTER
+// =========================
 
-router.post(
-  "/register",
-  async (req, res) => {
+router.post("/register", async (req, res) => {
 
-    try {
+  try {
 
-      const {
+    const {
+      fullname,
+      email,
+      password
+    } = req.body;
+
+    if (
+      !fullname ||
+      !email ||
+      !password
+    ) {
+
+      return res.json({
+        success: false,
+        message: "All fields are required."
+      });
+
+    }
+
+    const existingUser =
+      await User.findOne({
+        email
+      });
+
+    if (existingUser) {
+
+      return res.json({
+        success: false,
+        message: "Email already registered."
+      });
+
+    }
+
+    const hashedPassword =
+      await bcrypt.hash(
+        password,
+        10
+      );
+
+    const user =
+      new User({
+
         fullname,
         email,
-        password
-      } = req.body;
 
-      // CHECK EXISTING USER
+        password:
+          hashedPassword,
 
-      const existingUser =
-        await User.findOne({
-          email
-        });
+        credits: 3,
 
-      if (existingUser) {
-
-        return res.json({
-          message:
-            "Email already registered."
-        });
-
-      }
-
-      // HASH PASSWORD
-
-      const hashedPassword =
-        await bcrypt.hash(
-          password,
-          10
-        );
-
-      // CREATE USER
-
-      const user =
-        new User({
-
-          fullname,
-          email,
-
-          password:
-            hashedPassword
-
-        });
-
-      await user.save();
-
-      res.json({
-
-        message:
-          "Registration successful!"
+        isPaid: false
 
       });
 
-    } catch (error) {
+    await user.save();
 
-      console.log(error);
+    return res.json({
 
-      res.json({
-        message:
-          "Registration failed."
-      });
+      success: true,
 
-    }
+      message:
+        "Registration successful!"
+
+    });
+
+  } catch (error) {
+
+    console.log(
+      "REGISTER ERROR:",
+      error
+    );
+
+    return res.json({
+
+      success: false,
+
+      message:
+        "Registration failed."
+
+    });
 
   }
-);
+
+});
 
 
-
+// =========================
 // LOGIN
+// =========================
 
-router.post(
-  "/login",
-  async (req, res) => {
+router.post("/login", async (req, res) => {
 
-    try {
+  try {
 
-      const {
-        email,
-        password
-      } = req.body;
+    const {
+      email,
+      password
+    } = req.body;
 
-      const user =
-        await User.findOne({
-          email
-        });
-
-      if (!user) {
-
-        return res.json({
-          message:
-            "User not found."
-        });
-
-      }
-
-      const validPassword =
-        await bcrypt.compare(
-          password,
-          user.password
-        );
-
-      if (!validPassword) {
-
-        return res.json({
-          message:
-            "Invalid password."
-        });
-
-      }
-
-      const token =
-        jwt.sign(
-
-          {
-            id: user._id
-          },
-
-          "SECRETKEY"
-
-        );
-
-      res.json({
-
-        message:
-          "Login successful!",
-
-        token,
-
-        credits:
-          user.credits,
-
-          isPaid:
-  user.isPaid
-
+    const user =
+      await User.findOne({
+        email
       });
 
-    } catch (error) {
+    if (!user) {
 
-      console.log(error);
+      return res.json({
 
-      res.json({
+        success: false,
+
         message:
-          "Login failed."
+          "User not found."
+
       });
 
     }
 
-  }
-);
+    const validPassword =
+      await bcrypt.compare(
+        password,
+        user.password
+      );
 
+    if (!validPassword) {
+
+      return res.json({
+
+        success: false,
+
+        message:
+          "Invalid password."
+
+      });
+
+    }
+
+    const token =
+      jwt.sign(
+
+        {
+          id: user._id
+        },
+
+        "SECRETKEY",
+
+        {
+          expiresIn: "7d"
+        }
+
+      );
+
+    return res.json({
+
+      success: true,
+
+      message:
+        "Login successful!",
+
+      token,
+
+      credits:
+        user.credits,
+
+      isPaid:
+        user.isPaid
+
+    });
+
+  } catch (error) {
+
+    console.log(
+      "LOGIN ERROR:",
+      error
+    );
+
+    return res.json({
+
+      success: false,
+
+      message:
+        "Login failed."
+
+    });
+
+  }
+
+});
+
+
+// =========================
 // GET ALL USERS
+// =========================
 
-router.get(
-  "/users",
-  async (req, res) => {
+router.get("/users", async (req, res) => {
 
-    try {
+  try {
 
-      const users =
-        await User.find();
+    const users =
+      await User.find();
 
-      res.json(users);
+    res.json(users);
 
-    } catch (error) {
+  } catch (error) {
 
-      console.log(error);
+    console.log(error);
 
-      res.json({
-        message:
-          "Failed to load users."
-      });
+    res.json({
 
-    }
+      message:
+        "Failed to load users."
+
+    });
 
   }
-);
 
+});
+
+
+// =========================
 // ADD CREDITS
+// =========================
 
 router.put(
   "/add-credits/:id",
@@ -211,6 +248,17 @@ router.put(
         await User.findById(
           req.params.id
         );
+
+      if (!user) {
+
+        return res.json({
+
+          message:
+            "User not found."
+
+        });
+
+      }
 
       user.credits += 50;
 
@@ -239,5 +287,5 @@ router.put(
   }
 );
 
-module.exports =
-  router;
+module.exports = router;
+```
