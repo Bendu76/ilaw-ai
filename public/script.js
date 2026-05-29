@@ -5,6 +5,20 @@
 
 async function register() {
 
+  alert("REGISTER FUNCTION STARTED");
+
+  const fullname =
+    document.getElementById("fullname").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+
+async function register() {
+
   const fullname =
     document.getElementById("fullname").value;
 
@@ -34,6 +48,8 @@ async function register() {
         })
       }
     );
+
+alert("FETCH FINISHED");
 
   const data =
     await response.json();
@@ -221,7 +237,7 @@ async function generateLessonPlan() {
         1500
       );
 
-      
+
 
 if (isPaid !== "true") {
 
