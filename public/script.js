@@ -1,3 +1,113 @@
+```javascript
+// ========================
+// REGISTER
+// ========================
+
+async function register() {
+
+  const fullname =
+    document.getElementById("fullname").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  const response =
+    await fetch(
+      "https://ilaw-ai.onrender.com/auth/register",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+          fullname,
+          email,
+          password
+        })
+      }
+    );
+
+  const data =
+    await response.json();
+
+  alert(data.message);
+
+  if (data.success) {
+
+    window.location.href =
+      "teacher-login.html";
+
+  }
+
+}
+
+
+// ========================
+// LOGIN
+// ========================
+
+async function login() {
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  const response =
+    await fetch(
+      "https://ilaw-ai.onrender.com/auth/login",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+          email,
+          password
+        })
+      }
+    );
+
+  const data =
+    await response.json();
+
+  alert(data.message);
+
+  if (data.success) {
+
+    localStorage.setItem(
+      "token",
+      data.token
+    );
+
+    localStorage.setItem(
+      "credits",
+      data.credits
+    );
+
+    localStorage.setItem(
+      "isPaid",
+      data.isPaid
+    );
+
+    window.location.href =
+      "index.html";
+
+  }
+
+}
+
+
 // ========================
 // GENERATE LESSON PLAN
 // ========================
@@ -82,3 +192,13 @@ async function generateLessonPlan() {
   }
 
 }
+
+
+// ========================
+// EXPORT FUNCTIONS
+// ========================
+
+window.register = register;
+window.login = login;
+window.generateLessonPlan = generateLessonPlan;
+```
