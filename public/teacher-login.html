@@ -2,9 +2,7 @@
 <html>
 
 <head>
-
   <title>Teacher Login</title>
-
 </head>
 
 <body>
@@ -25,57 +23,14 @@
 
   <br><br>
 
-<button
-  type="button"
-  onclick="login()">
+  <button
+    type="button"
+    onclick="login()">
+    Login
+  </button>
 
-  Login
-
-</button>
-
-  <script>
-
-    async function login() {
-
-      const email =
-        document.getElementById("email").value;
-
-      const password =
-        document.getElementById("password").value;
-
-      const response =
-        await fetch(
-          "http://localhost:3000/auth/login",
-          {
-
-            method: "POST",
-
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body: JSON.stringify({
-
-              email,
-              password
-
-            })
-
-          }
-        );
-
-      const data =
-        await response.json();
-
-      alert(data.message);
-
-    }
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
-
-<script src="script.js"></script>
 
 </html>
