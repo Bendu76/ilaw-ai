@@ -221,39 +221,23 @@ async function generateLessonPlan() {
         1500
       );
 
-    if (isPaid !== "true") {
+      
 
-      document.getElementById(
-        "output"
-      ).innerHTML =
+if (isPaid !== "true") {
 
-        previewContent +
+  document.getElementById("output").innerHTML =
+    previewContent +
+    "<hr>" +
+    "<h2>🔒 Full ILAW Locked</h2>" +
+    "<p>Purchase credits to unlock full lesson plan and download.</p>" +
+    "<button onclick=\"window.location.href='payment.html'\">Buy Credits</button>";
 
-        `
-        <hr>
+  return;
 
-        <h2>
-          🔒 Full ILAW Locked
-        </h2>
+}
+    
 
-        <p>
-          Purchase credits to unlock
-          full lesson plan and download.
-        </p>
 
-        <button
-          onclick="
-            window.location.href=
-            'payment.html'
-          "
-        >
-          Buy Credits
-        </button>
-        `;
-
-      return;
-
-    }
 
     document.getElementById(
       "output"
