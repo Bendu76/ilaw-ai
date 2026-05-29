@@ -9,6 +9,14 @@ async function register() {
   const fullname =
     document.getElementById("fullname").value;
 
+ // ========================
+// LOGIN
+// ========================
+
+async function login() {
+
+  alert("LOGIN FUNCTION STARTED");
+
   const email =
     document.getElementById("email").value;
 
@@ -17,16 +25,16 @@ async function register() {
 
   const response =
     await fetch(
-      "https://ilaw-ai.onrender.com/auth/register",
+      "https://ilaw-ai.onrender.com/auth/login",
       {
         method: "POST",
 
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type":
+            "application/json"
         },
 
         body: JSON.stringify({
-          fullname,
           email,
           password
         })
@@ -42,9 +50,23 @@ async function register() {
 
   if (data.success) {
 
-    window.location.href =
-      "teacher-login.html";
+    localStorage.setItem(
+      "token",
+      data.token
+    );
 
+    localStorage.setItem(
+      "credits",
+      data.credits
+    );
+
+    localStorage.setItem(
+      "isPaid",
+      data.isPaid
+    );
+
+    window.location.href =
+      "index.html";
   }
 
-}
+}   
