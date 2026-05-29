@@ -1,47 +1,38 @@
-<!DOCTYPE html>
-<html>
+async function register() {
 
-<head>
-  <title>Teacher Registration</title>
-</head>
+  alert("REGISTER STARTED");
 
-<body>
+  const fullname =
+    document.getElementById("fullname").value;
 
-  <h1>Teacher Registration</h1>
+  const email =
+    document.getElementById("email").value;
 
-  <input
-    type="text"
-    id="fullname"
-    placeholder="Full Name">
+  const password =
+    document.getElementById("password").value;
 
-  <br><br>
+  alert("FIELDS OK");
 
-  <input
-    type="email"
-    id="email"
-    placeholder="Email">
+  const response =
+    await fetch(
+      "https://ilaw-ai.onrender.com/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullname,
+          email,
+          password
+        })
+      }
+    );
 
-  <br><br>
+  alert("FETCH DONE");
 
-  <input
-    type="password"
-    id="password"
-    placeholder="Password">
+  const data =
+    await response.json();
 
-  <br><br>
-
-  <button
-    type="button"
-    onclick="register()">
-    Register
-  </button>
-
-  <script>
-    alert("SCRIPT LOADED");
-  </script>
-
-  <script src="script.js"></script>
-
-</body>
-
-</html>
+  alert(JSON.stringify(data));
+}
