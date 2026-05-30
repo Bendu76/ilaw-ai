@@ -39,6 +39,10 @@ async function register() {
 
 window.register = register;
 
+if (data.success) {
+   window.location.href = "teacher-login.html";
+}
+
 
 
 async function login() {
