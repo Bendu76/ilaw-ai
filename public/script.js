@@ -34,15 +34,18 @@ async function register() {
   const data =
     await response.json();
 
-  alert(JSON.stringify(data));
+  alert(data.message);
+
+  if (data.success) {
+
+    window.location.href =
+      "teacher-login.html";
+
+  }
+
 }
 
 window.register = register;
-
-if (data.success) {
-   window.location.href = "teacher-login.html";
-}
-
 
 
 async function login() {
