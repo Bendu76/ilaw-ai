@@ -91,3 +91,17 @@ async function login() {
 }
 
 window.login = login;
+
+function generateLessonPlan() {
+
+  document.getElementById("output").innerHTML = `
+    <h2>TEST ILAW GENERATED</h2>
+    <p>Grade Level: ${
+      document.getElementById("grade").value
+    }</p>
+  `;
+
+}
+
+window.generateLessonPlan =
+  generateLessonPlan;
