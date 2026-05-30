@@ -93,6 +93,7 @@ async function login() {
 window.login = login;
 
 
+
 async function generateLessonPlan() {
 
   const grade =
@@ -109,76 +110,176 @@ async function generateLessonPlan() {
 
   const ilaw = `
 
-<h2>DAILY LESSON LOG — ILAW FORMAT</h2>
+<h2 style="text-align:center;">
+DAILY LESSON LOG (ILAW FORMAT)
+</h2>
 
-<h3>📌 LESSON INFORMATION</h3>
+<table border="1"
+       width="100%"
+       cellspacing="0"
+       cellpadding="8">
 
-<p><b>Name of Lesson:</b> ${topic}</p>
-<p><b>Learning Area:</b> ${subject}</p>
-<p><b>Grade Level:</b> ${grade}</p>
-<p><b>Number of Sessions:</b> ${sessions}</p>
+<tr>
+  <td width="25%"><b>Learning Area</b></td>
+  <td>${subject}</td>
+  <td><b>Grade Level</b></td>
+  <td>${grade}</td>
+</tr>
 
-<h3>🎯 I — INTENTIONS</h3>
+<tr>
+  <td><b>Topic</b></td>
+  <td colspan="3">${topic}</td>
+</tr>
 
-<p><b>Learning Competency:</b></p>
-<p>Demonstrate understanding of ${topic}</p>
+<tr>
+  <td><b>Number of Sessions</b></td>
+  <td colspan="3">${sessions}</td>
+</tr>
 
-<p><b>Learner Context:</b></p>
-<p>Learners develop knowledge and skills through meaningful activities.</p>
+<tr>
+  <td colspan="4"
+      style="background:#eaeaea;">
+      <b>I — INTENTIONS</b>
+  </td>
+</tr>
 
-<h3>📚 L — LEARNING EXPERIENCE</h3>
+<tr>
+  <td><b>Learning Competency</b></td>
+  <td colspan="3">
+    Demonstrate understanding of ${topic}
+  </td>
+</tr>
 
-<p><b>Learning Objectives</b></p>
+<tr>
+  <td><b>Learner Context</b></td>
+  <td colspan="3">
+    Learners develop knowledge and skills through meaningful activities.
+  </td>
+</tr>
 
-<ul>
-<li>Define ${topic}</li>
-<li>Explain concepts related to ${topic}</li>
-<li>Apply learning through activities</li>
-</ul>
+<tr>
+  <td colspan="4"
+      style="background:#eaeaea;">
+      <b>L — LEARNING EXPERIENCE</b>
+  </td>
+</tr>
 
-<p><b>Pre-Lesson</b></p>
+<tr>
+  <td><b>Learning Objectives</b></td>
+  <td colspan="3">
 
-<p>Review previous lesson and motivate learners through examples related to ${topic}.</p>
+    • Define ${topic}<br>
+    • Explain concepts related to ${topic}<br>
+    • Apply learning through activities
 
-<p><b>Learning Activities</b></p>
+  </td>
+</tr>
 
-<ol>
-<li>Introduction</li>
-<li>Discussion of ${topic}</li>
-<li>Guided Practice</li>
-<li>Group Activity</li>
-<li>Assessment</li>
-<li>Generalization</li>
-</ol>
+<tr>
+  <td><b>Pre-Lesson</b></td>
+  <td colspan="3">
+    Review previous lesson and motivate learners.
+  </td>
+</tr>
 
-<p><b>Learning Resources</b></p>
+<tr>
+  <td><b>Session 1</b></td>
+  <td colspan="3">
+    Introduction and discussion of ${topic}
+  </td>
+</tr>
 
-<ul>
-<li>Textbook</li>
-<li>Activity Sheets</li>
-<li>PowerPoint Presentation</li>
-<li>Visual Aids</li>
-</ul>
+<tr>
+  <td><b>Session 2</b></td>
+  <td colspan="3">
+    Guided practice activities
+  </td>
+</tr>
 
-<h3>📊 A — ASSESSMENT</h3>
+<tr>
+  <td><b>Session 3</b></td>
+  <td colspan="3">
+    Collaborative learning activities
+  </td>
+</tr>
 
-<p>Teacher observation, questioning, quiz, and performance task.</p>
+<tr>
+  <td><b>Session 4</b></td>
+  <td colspan="3">
+    Assessment and performance task
+  </td>
+</tr>
 
-<h3>🌱 W — WAYS FORWARD</h3>
+<tr>
+  <td><b>Session 5</b></td>
+  <td colspan="3">
+    Generalization and reflection
+  </td>
+</tr>
 
-<p>Provide enrichment activities and remediation based on learner performance.</p>
+<tr>
+  <td><b>Resources</b></td>
+  <td colspan="3">
+    Textbook, Activity Sheets,
+    PowerPoint Presentation,
+    Visual Aids
+  </td>
+</tr>
 
-<h3>✍️ REFLECTIONS</h3>
+<tr>
+  <td colspan="4"
+      style="background:#eaeaea;">
+      <b>A — ASSESSMENT</b>
+  </td>
+</tr>
 
-<p>Reflect on learner participation, mastery, and areas needing improvement.</p>
+<tr>
+  <td><b>Assessment</b></td>
+  <td colspan="3">
+    Quiz, performance task,
+    teacher observation,
+    oral recitation.
+  </td>
+</tr>
 
-<hr>
+<tr>
+  <td colspan="4"
+      style="background:#eaeaea;">
+      <b>W — WAYS FORWARD</b>
+  </td>
+</tr>
 
-<h3>PREPARED, CHECKED AND NOTED BY</h3>
+<tr>
+  <td><b>Remediation / Enrichment</b></td>
+  <td colspan="3">
+    Provide enrichment and remediation activities based on learner performance.
+  </td>
+</tr>
 
-<p><b>Prepared by:</b><br>
-LUVISMINDO U. DUAN, JR<br>
-Teacher</p>
+<tr>
+  <td colspan="4"
+      style="background:#eaeaea;">
+      <b>REFLECTIONS</b>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    Reflect on learner participation,
+    mastery, and areas needing improvement.
+  </td>
+</tr>
+
+</table>
+
+<br><br>
+
+<h3>PREPARED BY</h3>
+
+<p>
+<b>_____________________</b><br>
+Teacher
+</p>
 
 `;
 
