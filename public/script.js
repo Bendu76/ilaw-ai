@@ -175,12 +175,14 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
   </td>
 </tr>
 
+
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
       <b>L — LEARNING EXPERIENCE</b>
   </td>
 </tr>
+
 
 <tr>
   <td><b>Learning Objectives</b></td>
