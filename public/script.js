@@ -1,9 +1,9 @@
 
-alert("NEW SCRIPT LOADED");
+
 
 async function register() {
 
-  alert("REGISTER STARTED");
+
 
   const fullname =
     document.getElementById("fullname").value;
@@ -14,7 +14,7 @@ async function register() {
   const password =
     document.getElementById("password").value;
 
-  alert("FIELDS OK");
+  
 
   const response =
     await fetch(
@@ -32,7 +32,7 @@ async function register() {
       }
     );
 
-  alert("FETCH DONE");
+  
 
   const data =
     await response.json();
@@ -53,7 +53,7 @@ window.register = register;
 
 async function login() {
 
-  alert("LOGIN STARTED");
+  
 
   const email =
     document.getElementById("email").value;
@@ -79,7 +79,7 @@ async function login() {
   const data =
     await response.json();
 
-  alert(JSON.stringify(data));
+  
 
   if (data.success) {
 
