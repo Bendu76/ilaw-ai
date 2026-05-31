@@ -226,7 +226,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 
 <tr>
-  <td><b>${LearnerContextLabel}</b></td>
+  <td><b>${learnerContextLabel}</b></td>
   <td colspan="3">
     Learners develop knowledge and skills through meaningful activities.
   </td>
@@ -350,7 +350,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>${reflectionsLabel}</b>
+      <b>${reflectionLabel}</b>
   </td>
 </tr>
 
