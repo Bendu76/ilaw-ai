@@ -1,6 +1,3 @@
-
-
-
 async function register() {
 
 
@@ -106,9 +103,6 @@ async function generateLessonPlan() {
     document.getElementById("subject").value;
 
 
-const subjectLower =
-  subject.toLowerCase();
-
 
     const topic =
   document.getElementById("topic").value;
@@ -119,60 +113,6 @@ const competency =
 const sessions =
   document.getElementById("sessions").value;
 
-
-const filipinoSubjects = [
-
-  "filipino",
-  "esp",
-  "edukasyon sa pagpapakatao",
-  "ap",
-  "araling panlipunan",
-  "epp",
-  "mapeh"
-
-];
-
-const isFilipino =
-
-  filipinoSubjects.some(
-    item =>
-      subjectLower.includes(item)
-  );
-
-
-let competencyLabel =
-  "Learning Competency";
-
-let learnerContextLabel =
-  "Learner Context";
-
-let objectivesLabel =
-  "Learning Objectives";
-
-let assessmentLabel =
-  "Assessment";
-
-let reflectionLabel =
-  "REFLECTIONS";
-
-if (isFilipino) {
-
-  competencyLabel =
-    "Kompetensi sa Pagkatuto";
-
-  learnerContextLabel =
-    "Konteksto ng Mag-aaral";
-
-  objectivesLabel =
-    "Mga Layunin sa Pagkatuto";
-
-  assessmentLabel =
-    "Pagtataya";
-
-  reflectionLabel =
-    "PAGNINILAY";
-
-}
 
 
   const ilaw = `
@@ -217,7 +157,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 
 <tr>
-  <td><b>${competencyLabel}</b></td>
+  <td><b>Learning Competency</b></td>
   <td colspan="3">
     ${competency}
   </td>
@@ -226,7 +166,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 
 <tr>
-  <td><b>${learnerContextLabel}</b></td>
+  <td><b>Learner Context</b></td>
   <td colspan="3">
     Learners develop knowledge and skills through meaningful activities.
   </td>
@@ -242,7 +182,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 
 <tr>
-  <td><b>${objectivesLabel}</b></td>
+  <td><b>Learning Objectives</b></td>
   <td colspan="3">
 
     • Define ${topic}<br>
@@ -325,7 +265,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 </tr>
 
 <tr>
-  <td><b>${assessmentLabel}</b></td>
+  <td><b>Assessment</b></td>
   <td colspan="3">
     Quiz, performance task,
     teacher observation,
@@ -350,7 +290,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>${reflectionLabel}</b>
+      <b>REFLECTIONS</b>
   </td>
 </tr>
 
@@ -381,4 +321,3 @@ Teacher
 
 window.generateLessonPlan =
   generateLessonPlan;
-
