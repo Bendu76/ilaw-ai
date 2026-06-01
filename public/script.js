@@ -120,6 +120,25 @@ console.log(
 );
 
 
+let objectivesLabel;
+let assessmentLabel;
+let reflectionLabel;
+
+if (language === "filipino") {
+
+  objectivesLabel = "Mga Layunin";
+  assessmentLabel = "Pagtataya";
+  reflectionLabel = "Pagninilay";
+
+} else {
+
+  objectivesLabel = "Learning Objectives";
+  assessmentLabel = "Assessment";
+  reflectionLabel = "Reflections";
+
+}
+
+
 const sessions =
   document.getElementById("sessions").value;
 
@@ -192,7 +211,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 
 <tr>
-  <td><b>Learning Objectives</b></td>
+  <td><b>${objectivesLabel}</b></td>
   <td colspan="3">
 
     • Define ${topic}<br>
@@ -275,7 +294,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 </tr>
 
 <tr>
-  <td><b>Assessment</b></td>
+  <td><b>${ssessmentLabel}</b></td>
   <td colspan="3">
     Quiz, performance task,
     teacher observation,
@@ -300,7 +319,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>REFLECTIONS</b>
+      <b>${reflectionLabel}</b>
   </td>
 </tr>
 
