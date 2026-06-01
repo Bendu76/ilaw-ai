@@ -153,9 +153,9 @@ if (language === "filipino") {
 
 
   objectivesContent = `
-  &bull; Matukoy ang ${topic}<br>
-  &bull; Maipaliwanag ang mga konseptong kaugnay ng ${topic}<br>
-  &bull; Mailapat ang natutuhan sa mga gawaing pampagkatuto
+  . Matukoy ang ${topic}<br>
+  . Maipaliwanag ang mga konseptong kaugnay ng ${topic}<br>
+  . Mailapat ang natutuhan sa mga gawaing pampagkatuto
 `;
 
 
@@ -198,7 +198,7 @@ if (language === "filipino") {
   • Apply learning through activities
   `;
 
-  
+
   preLessonContent =
     "Review previous lesson and motivate learners.";
 
