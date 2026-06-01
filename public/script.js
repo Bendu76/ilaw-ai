@@ -151,11 +151,13 @@ if (language === "filipino") {
   aiUseLabel = "Pahayag sa Paggamit ng AI";
   remediationLabel = "Pagpapayaman / Remediation";
 
+
   objectivesContent = `
-  • Matukoy ang ${topic}<br>
-  • Maipaliwanag ang mga konseptong kaugnay ng ${topic}<br>
-  • Mailapat ang natutuhan sa mga gawaing pampagkatuto
-  `;
+  &bull; Matukoy ang ${topic}<br>
+  &bull; Maipaliwanag ang mga konseptong kaugnay ng ${topic}<br>
+  &bull; Mailapat ang natutuhan sa mga gawaing pampagkatuto
+`;
+
 
   preLessonContent =
     "Balik-aralan ang nakaraang aralin at ihanda ang mga mag-aaral.";
@@ -189,12 +191,14 @@ if (language === "filipino") {
   aiUseLabel = "Declaration of AI Use";
   remediationLabel = "Remediation / Enrichment";
 
+
   objectivesContent = `
   • Define ${topic}<br>
   • Explain concepts related to ${topic}<br>
   • Apply learning through activities
   `;
 
+  
   preLessonContent =
     "Review previous lesson and motivate learners.";
 
