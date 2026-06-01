@@ -294,7 +294,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 </tr>
 
 <tr>
-  <td><b>${ssessmentLabel}</b></td>
+  <td><b>${assessmentLabel}</b></td>
   <td colspan="3">
     Quiz, performance task,
     teacher observation,
