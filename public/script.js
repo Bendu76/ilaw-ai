@@ -359,6 +359,14 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 
 <tr>
+  <td><b>${aiUseLabel}</b></td>
+  <td colspan="3">
+  ${aiUseContent}
+  </td>
+</tr>
+
+
+<tr>
   <td colspan="4"
       style="background:#eaeaea;">
       <b>L. LEARNING EXPERIENCE</b>
@@ -391,14 +399,6 @@ ${sessionRows}
     Visual Aids
   </td>
 </tr>
-
-<tr>
-  <td><b>${aiUseLabel}</b></td>
-  <td colspan="3">
-  ${aiUseContent}
-  </td>
-</tr>
-
 
 
 <tr>
