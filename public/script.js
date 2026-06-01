@@ -128,6 +128,13 @@ let resourcesLabel;
 let aiUseLabel;
 let remediationLabel;
 
+
+let aiUseContent;
+let assessmentContent;
+let remediationContent;
+let reflectionContent;
+
+
 let objectivesContent;
 let preLessonContent;
 let session1Content;
@@ -138,6 +145,7 @@ let session5Content;
 
 
 if (language === "filipino") {
+
 
   objectivesLabel = "Mga Layunin";
   assessmentLabel = "Pagtataya";
@@ -177,7 +185,21 @@ if (language === "filipino") {
   session5Content =
     "Paglalahat at pagninilay";
 
-} else {
+    aiUseContent =
+  "Ang Daily Lesson Log na ito ay unang nabuo gamit ang ILAW Lesson Plan AI. Sinuri, pinagtibay, binago, at iniangkop ng guro ang nilalaman upang matiyak ang kaangkupan nito sa pangangailangan ng mga mag-aaral, pamantayan ng kurikulum, at mga patakaran ng DepEd.";
+
+assessmentContent =
+  "Pagsusulit, gawaing pagganap, obserbasyon ng guro, at pagbigkas.";
+
+remediationContent =
+  "Magbigay ng mga gawaing pagpapayaman at remediation batay sa pagganap ng mga mag-aaral.";
+
+reflectionContent =
+  "Magnilay sa pakikilahok ng mga mag-aaral, antas ng pagkatuto, at mga bahaging nangangailangan ng pagpapabuti.";
+
+} 
+
+else {
 
   objectivesLabel = "Learning Objectives";
   assessmentLabel = "Assessment";
@@ -217,12 +239,66 @@ if (language === "filipino") {
   session5Content =
     "Generalization and reflection";
 
-}
+aiUseContent =
+  "This Daily Lesson Log was initially generated using ILAW Lesson Plan AI. The teacher reviewed, validated, modified, and contextualized the content to ensure alignment with learner needs, curriculum standards, and DepEd policies.";
 
+assessmentContent =
+  "Quiz, performance task, teacher observation, oral recitation.";
+
+remediationContent =
+  "Provide enrichment and remediation activities based on learner performance.";
+
+reflectionContent =
+  "Reflect on learner participation, mastery, and areas needing improvement.";
+
+}
 
 
 const sessions =
   document.getElementById("sessions").value;
+
+
+let sessionRows = "";
+
+if (sessions >= 1) {
+sessionRows += `
+<tr>
+<td><b>Session 1</b></td>
+<td colspan="3">${session1Content}</td>
+</tr>`;
+}
+
+if (sessions >= 2) {
+sessionRows += `
+<tr>
+<td><b>Session 2</b></td>
+<td colspan="3">${session2Content}</td>
+</tr>`;
+}
+
+if (sessions >= 3) {
+sessionRows += `
+<tr>
+<td><b>Session 3</b></td>
+<td colspan="3">${session3Content}</td>
+</tr>`;
+}
+
+if (sessions >= 4) {
+sessionRows += `
+<tr>
+<td><b>Session 4</b></td>
+<td colspan="3">${session4Content}</td>
+</tr>`;
+}
+
+if (sessions >= 5) {
+sessionRows += `
+<tr>
+<td><b>Session 5</b></td>
+<td colspan="3">${session5Content}</td>
+</tr>`;
+}
 
 
   const ilaw = `
@@ -305,41 +381,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
   </td>
 </tr>
 
-<tr>
-  <td><b>Session 1</b></td>
-  <td colspan="3">
-    ${session1Content}
-  </td>
-</tr>
-
-<tr>
-  <td><b>Session 2</b></td>
-  <td colspan="3">
-  ${session2Content}
-  </td>
-</tr>
-
-<tr>
-  <td><b>Session 3</b></td>
-  <td colspan="3">
-  ${session3Content}
-  </td>
-</tr>
-
-<tr>
-  <td><b>Session 4</b></td>
-  <td colspan="3">
-  ${session4Content}
-  </td>
-</tr>
-
-<tr>
-  <td><b>Session 5</b></td>
-  <td colspan="3">
-  ${session5Content}
-  </td>
-</tr>
-
+${sessionRows}
 
 <tr>
   <td><b>${resourcesLabel}</b></td>
@@ -353,11 +395,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td><b>${aiUseLabel}</b></td>
   <td colspan="3">
-    This Daily Lesson Log was initially generated
-    using ILAW Lesson Plan AI. The teacher reviewed,
-    validated, modified, and contextualized the content
-    to ensure alignment with learner needs,
-    curriculum standards, and DepEd policies.
+  ${aiUseContent}
   </td>
 </tr>
 
@@ -373,9 +411,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td><b>${assessmentLabel}</b></td>
   <td colspan="3">
-    Quiz, performance task,
-    teacher observation,
-    oral recitation.
+  ${assessmentContent}
   </td>
 </tr>
 
@@ -389,7 +425,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td><b>${remediationLabel}</b></td>
   <td colspan="3">
-    Provide enrichment and remediation activities based on learner performance.
+  ${remediationContent}
   </td>
 </tr>
 
@@ -402,8 +438,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 
 <tr>
   <td colspan="4">
-    Reflect on learner participation,
-    mastery, and areas needing improvement.
+  ${reflectionContent}
   </td>
 </tr>
 
