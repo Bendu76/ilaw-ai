@@ -179,7 +179,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>I — INTENTIONS</b>
+      <b>I. INTENTIONS</b>
   </td>
 </tr>
 
@@ -205,7 +205,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>L — LEARNING EXPERIENCE</b>
+      <b>L. LEARNING EXPERIENCE</b>
   </td>
 </tr>
 
@@ -289,7 +289,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>A — ASSESSMENT</b>
+      <b>A. ASSESSMENT</b>
   </td>
 </tr>
 
@@ -305,7 +305,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td colspan="4"
       style="background:#eaeaea;">
-      <b>W — WAYS FORWARD</b>
+      <b>W. WAYS FORWARD</b>
   </td>
 </tr>
 
