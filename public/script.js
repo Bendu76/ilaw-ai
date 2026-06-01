@@ -215,6 +215,8 @@ if (language === "filipino") {
 
 }
 
+
+
 const sessions =
   document.getElementById("sessions").value;
 
@@ -271,7 +273,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td><b>Learner Context</b></td>
   <td colspan="3">
-    ${LearnerContext}
+  ${learnerContext}
   </td>
 </tr>
 
@@ -331,7 +333,6 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
   <td><b>Session 5</b></td>
   <td colspan="3">
   ${session5Content}
-    Generalization and reflection
   </td>
 </tr>
 
@@ -382,7 +383,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 </tr>
 
 <tr>
-  <td><b>${emediationLabel}</b></td>
+  <td><b>${remediationLabel}</b></td>
   <td colspan="3">
     Provide enrichment and remediation activities based on learner performance.
   </td>
