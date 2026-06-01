@@ -110,6 +110,16 @@ async function generateLessonPlan() {
 const competency =
   document.getElementById("competency").value;
 
+
+const language =
+  detectLanguage(competency);
+
+console.log(
+  "Detected Language:",
+  language
+);
+
+
 const sessions =
   document.getElementById("sessions").value;
 
