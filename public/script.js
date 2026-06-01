@@ -126,7 +126,7 @@ let reflectionLabel;
 
 if (language === "filipino") {
 
-  objectivesLabel = "Mga Layunin";
+  objectivesLabel = "PARTNER TEST 123";
   assessmentLabel = "Pagtataya";
   reflectionLabel = "Pagninilay";
 
