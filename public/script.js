@@ -214,9 +214,9 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
   <td><b>${objectivesLabel}</b></td>
   <td colspan="3">
 
-    • Define ${topic}<br>
-    • Explain concepts related to ${topic}<br>
-    • Apply learning through activities
+    &bull; Define ${topic}<br>
+    &bull; Explain concepts related to ${topic}<br>
+    &bull; Apply learning through activities
 
   </td>
 </tr>
