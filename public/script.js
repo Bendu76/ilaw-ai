@@ -1,7 +1,6 @@
 async function register() {
 
 
-
   const fullname =
     document.getElementById("fullname").value;
 
@@ -12,7 +11,6 @@ async function register() {
     document.getElementById("password").value;
 
   
-
   const response =
     await fetch(
       "https://ilaw-ai.onrender.com/auth/register",
@@ -124,11 +122,58 @@ let objectivesLabel;
 let assessmentLabel;
 let reflectionLabel;
 
+let learnerContext;
+let preLessonLabel;
+let resourcesLabel;
+let aiUseLabel;
+let remediationLabel;
+
+let objectivesContent;
+let preLessonContent;
+let session1Content;
+let session2Content;
+let session3Content;
+let session4Content;
+let session5Content;
+
+
 if (language === "filipino") {
 
   objectivesLabel = "Mga Layunin";
   assessmentLabel = "Pagtataya";
   reflectionLabel = "Pagninilay";
+
+  learnerContext =
+    "Napaunlad ng mga mag-aaral ang kaalaman at kasanayan sa pamamagitan ng makabuluhang gawain.";
+
+  preLessonLabel = "Panimulang Gawain";
+  resourcesLabel = "Mga Kagamitan";
+  aiUseLabel = "Pahayag sa Paggamit ng AI";
+  remediationLabel = "Pagpapayaman / Remediation";
+
+  objectivesContent = `
+  • Matukoy ang ${topic}<br>
+  • Maipaliwanag ang mga konseptong kaugnay ng ${topic}<br>
+  • Mailapat ang natutuhan sa mga gawaing pampagkatuto
+  `;
+
+  preLessonContent =
+    "Balik-aralan ang nakaraang aralin at ihanda ang mga mag-aaral.";
+
+  session1Content =
+    `Pagpapakilala at talakayan tungkol sa ${topic}`;
+
+  session2Content =
+    "Pinatnubayang pagsasanay";
+
+  session3Content =
+    "Pangkatang gawain";
+
+  session4Content =
+    "Pagtataya at gawaing pagganap";
+
+  session5Content =
+    "Paglalahat at pagninilay";
 
 } else {
 
@@ -136,16 +181,45 @@ if (language === "filipino") {
   assessmentLabel = "Assessment";
   reflectionLabel = "Reflections";
 
-}
+  learnerContext =
+    "Learners develop knowledge and skills through meaningful activities.";
 
+  preLessonLabel = "Pre-Lesson";
+  resourcesLabel = "Resources";
+  aiUseLabel = "Declaration of AI Use";
+  remediationLabel = "Remediation / Enrichment";
+
+  objectivesContent = `
+  • Define ${topic}<br>
+  • Explain concepts related to ${topic}<br>
+  • Apply learning through activities
+  `;
+
+  preLessonContent =
+    "Review previous lesson and motivate learners.";
+
+  session1Content =
+    `Introduction and discussion of ${topic}`;
+
+  session2Content =
+    "Guided practice activities";
+
+  session3Content =
+    "Collaborative learning activities";
+
+  session4Content =
+    "Assessment and performance task";
+
+  session5Content =
+    "Generalization and reflection";
+
+}
 
 const sessions =
   document.getElementById("sessions").value;
 
 
-
   const ilaw = `
-
 
 
 <h2 style="text-align:center;color:red;">
@@ -197,7 +271,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td><b>Learner Context</b></td>
   <td colspan="3">
-    Learners develop knowledge and skills through meaningful activities.
+    ${LearnerContext}
   </td>
 </tr>
 
@@ -213,59 +287,57 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 <tr>
   <td><b>${objectivesLabel}</b></td>
   <td colspan="3">
-
-    &bull; Define ${topic}<br>
-    &bull; Explain concepts related to ${topic}<br>
-    &bull; Apply learning through activities
+    ${objectivesContent}
 
   </td>
 </tr>
 
 <tr>
-  <td><b>Pre-Lesson</b></td>
+  <td><b>${preLessonLabel}</b></td>
   <td colspan="3">
-    Review previous lesson and motivate learners.
+  ${preLessonContent}
   </td>
 </tr>
 
 <tr>
   <td><b>Session 1</b></td>
   <td colspan="3">
-    Introduction and discussion of ${topic}
+    ${session1Content}
   </td>
 </tr>
 
 <tr>
   <td><b>Session 2</b></td>
   <td colspan="3">
-    Guided practice activities
+  ${session2Content}
   </td>
 </tr>
 
 <tr>
   <td><b>Session 3</b></td>
   <td colspan="3">
-    Collaborative learning activities
+  ${session3Content}
   </td>
 </tr>
 
 <tr>
   <td><b>Session 4</b></td>
   <td colspan="3">
-    Assessment and performance task
+  ${session4Content}
   </td>
 </tr>
 
 <tr>
   <td><b>Session 5</b></td>
   <td colspan="3">
+  ${session5Content}
     Generalization and reflection
   </td>
 </tr>
 
 
 <tr>
-  <td><b>Resources</b></td>
+  <td><b>${resourcesLabel}</b></td>
   <td colspan="3">
     Textbook, Activity Sheets,
     PowerPoint Presentation,
@@ -274,7 +346,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 </tr>
 
 <tr>
-  <td><b>Declaration of AI Use</b></td>
+  <td><b>${aiUseLabel}</b></td>
   <td colspan="3">
     This Daily Lesson Log was initially generated
     using ILAW Lesson Plan AI. The teacher reviewed,
@@ -310,7 +382,7 @@ DAILY LESSON LOG (ILAW FORMAT V2 TEST)
 </tr>
 
 <tr>
-  <td><b>Remediation / Enrichment</b></td>
+  <td><b>${emediationLabel}</b></td>
   <td colspan="3">
     Provide enrichment and remediation activities based on learner performance.
   </td>
