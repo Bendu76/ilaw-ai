@@ -66,12 +66,37 @@ SESSIONS must appear as COLUMN HEADERS.
 
 Rows must contain:
 
-- I - INTENTIONS (Objectives)
-- L - LEARNING EXPERIENCE (Pre-Lesson)
-- L - LEARNING ACTIVITIES
-- R - RESOURCES
-- A - ASSESSMENT
-- W - WAYS FORWARD (Reflection)
+I - INTENTIONS
+
+L - LEARNING EXPERIENCE
+
+   Include:
+   - Learning Activities
+   - Resources
+
+A - ASSESSMENT
+
+   Include:
+   - Formative Assessment
+
+W - WAYS FORWARD
+
+   Include:
+   - Extended Learning Opportunities
+   - Reflection
+
+IMPORTANT:
+
+Learning Activities and Resources must appear inside the Learning Experience section.
+
+Formative Assessment must appear inside the Assessment section.
+
+Extended Learning Opportunities and Reflection must appear inside the Ways Forward section.
+
+Do not create separate rows for Learning Activities, Resources, Formative Assessment, Extended Learning Opportunities, or Reflection.
+
+They must be sub-sections within their parent section.
+
 
 Before the session table, include:
 
