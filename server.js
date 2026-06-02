@@ -69,6 +69,22 @@ Maximum 5 sessions.
 
 SESSIONS must appear as COLUMN HEADERS.
 
+IMPORTANT:
+
+Create ONLY ONE session header row.
+
+Display:
+
+SECTIONS | SESSION 1 | SESSION 2 | SESSION 3 | SESSION 4 | SESSION 5
+
+ONLY ONCE at the beginning of the ILAW table.
+
+Do NOT repeat the session header row anywhere else.
+
+Do NOT create another SESSION header before Reflection.
+
+Do NOT create another SESSION header before Ways Forward.
+
 
 Create separate table rows for the following:
 
@@ -182,6 +198,18 @@ font-size: 20px;
 font-weight: bold;
 text-align: center;
 
+
+All content inside Session cells must use:
+
+font-family: Arial, sans-serif;
+font-size: 12px;
+font-weight: normal;
+line-height: 1.3;
+
+Apply the same font style to all Session 1 to Session 5 cells.
+
+Do not use different font sizes inside session content.
+
 2. LESSON INFORMATION
 
 Use:
@@ -194,6 +222,21 @@ The LESSON INFORMATION title must appear in its own bordered row before the less
 
 
 The LESSON INFORMATION section must be displayed as a bordered table.
+
+Use:
+
+width:100%;
+border-collapse:collapse;
+table-layout:fixed;
+
+The first column must be 30%.
+
+The second column must be 70%.
+
+All rows must align perfectly.
+
+All borders must connect without gaps.
+
 
 Use visible grid lines.
 
