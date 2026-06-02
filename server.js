@@ -87,14 +87,15 @@ W - WAYS FORWARD
 
 IMPORTANT:
 
-Learning Activities and Learning Resources must appear outside the Learning Experience section but their font size smaller compare to Learning Experience.
+Learning Activities and Learning Resources must appear inside the Learning Experience section but their font size is smaller compare to Learning Experience.
 
 Formative Assessment must appear inside the Assessment section with open and close parenthesis.
 
-Extended Learning Opportunities and Reflection must appear outside the Ways Forward section.
+Extended Learning Opportunities and Reflection must appear inside the Ways Forward section but their font size is smaller compare to Ways Forward.
 
 Create separate rows for Learning Activities, Resources, Formative Assessment, Extended Learning Opportunities, or Reflection.
 
+Declaration of AI Use should be placed below the References with a separate row.
 
 Before the session table, include:
 
