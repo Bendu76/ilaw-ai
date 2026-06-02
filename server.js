@@ -69,12 +69,24 @@ L - Learning Experience
 A - Assessment
 W - Ways Forward
 
+
 Lesson Details:
-Grade Level: ${req.body.grade}
-Subject: ${req.body.subject}
-Topic: ${req.body.topic}
+
+Grade Level:
+${req.body.grade}
+
+Subject:
+${req.body.subject}
+
+Topic:
+${req.body.topic}
+
+Learning Competency:
+${req.body.competency}
+
 Number of Sessions:
 ${req.body.sessions}
+
 
 IMPORTANT:
 Return HTML only.

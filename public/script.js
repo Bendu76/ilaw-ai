@@ -100,14 +100,14 @@ async function generateLessonPlan() {
   const subject =
     document.getElementById("subject").value;
 
-
-
     const topic =
   document.getElementById("topic").value;
 
 const competency =
   document.getElementById("competency").value;
 
+const sessions =
+document.getElementById("sessions").value;
 
 const language =
   detectLanguage(competency);
