@@ -40,35 +40,67 @@ app.post("/generate", async (req, res) => {
           {
             role: "user",
 
-            content: `
-Generate a professional DepEd ILAW Lesson Plan.
+
+content: `
+Generate a complete and professional DepEd MATATAG ILAW Lesson Plan.
 
 Return ONLY pure HTML.
 
 Requirements:
-- Use HTML table
-- Add border='1'
-- Use rows and columns
-- Professional DepEd style
+
+- Use a professional HTML table.
+- Add border='1'.
+- Use rows and columns.
+- Use clean DepEd formatting.
+- Use Arial font.
+- Use width:100%.
+- Use border-collapse: collapse.
+
+IMPORTANT:
 
 Create SESSION columns based on the selected number of sessions.
 
 Maximum 5 sessions.
 
-Each session must contain:
-- Objectives
-- Pre-Lesson
-- Learning Activities
-- Resources
-- Assessment
-- Reflection
+SESSIONS must appear as COLUMN HEADERS.
 
-Include:
-I - Intentions
-L - Learning Experience
-A - Assessment
-W - Ways Forward
+Rows must contain:
 
+- I - INTENTIONS (Objectives)
+- L - LEARNING EXPERIENCE (Pre-Lesson)
+- L - LEARNING ACTIVITIES
+- R - RESOURCES
+- A - ASSESSMENT
+- W - WAYS FORWARD (Reflection)
+
+Before the session table, include:
+
+1. DEPARTMENT OF EDUCATION HEADER
+2. Grade Level
+3. Subject
+4. Topic
+5. Learning Competency
+6. LEARNER CONTEXT section
+
+After the session table, include:
+
+AI DECLARATION
+
+"This lesson plan was generated with the assistance of Artificial Intelligence and reviewed by the teacher."
+
+Then include a signature table:
+
+Prepared By:
+____________________
+Teacher
+
+Checked By:
+____________________
+School Head
+
+Use realistic and detailed lesson content.
+
+Do not leave any section blank.
 
 Lesson Details:
 
@@ -87,12 +119,15 @@ ${req.body.competency}
 Number of Sessions:
 ${req.body.sessions}
 
-
 IMPORTANT:
+
 Return HTML only.
+
 No markdown.
+
 No triple backticks.
 `
+
           }
         ]
 
