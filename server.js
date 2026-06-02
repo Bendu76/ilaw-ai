@@ -75,12 +75,14 @@ Rows must contain:
 
 Before the session table, include:
 
-1. DEPARTMENT OF EDUCATION HEADER
-2. Grade Level
-3. Subject
-4. Topic
-5. Learning Competency
-6. LEARNER CONTEXT section
+1. DAILY LESSON LOG - ILAW FORMAT (DepEd Order 9, s. 2026)
+2. LESSON INFORMATION
+3. Name of Lesson
+4. Learning Area
+5. Term and Week
+6. Grade / Section
+7. Teacher
+8. References
 
 After the session table, include:
 
