@@ -60,6 +60,11 @@ IMPORTANT:
 
 Create SESSION columns based on the selected number of sessions.
 
+Use professional DepEd colors:
+- SESSION header: background-color #4472C4; color white;
+- Major Sections (I, L, A, W): background-color #D9EAD3;
+- Sub-sections: background-color #EDEDED;
+
 Maximum 5 sessions.
 
 SESSIONS must appear as COLUMN HEADERS.
