@@ -109,6 +109,28 @@ const competency =
 const sessions =
 document.getElementById("sessions").value;
 
+const response = await fetch(
+  "https://ilaw-ai.onrender.com/generate",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      grade,
+      subject,
+      topic,
+      competency,
+      sessions
+    })
+  }
+);
+
+const data = await response.json();
+
+console.log(data);
+
+
 const language =
   detectLanguage(competency);
 
@@ -458,3 +480,33 @@ Teacher
 
 window.generateLessonPlan =
   generateLessonPlan;
+
+
+  async function testAI() {
+
+  const response = await fetch(
+    "https://ilaw-ai.onrender.com/generate",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        grade: "Grade 4",
+        subject: "Research",
+        topic: "Scientific Process Skills",
+        competency: "Identify different kinds of process skills used for scientific investigation.",
+        sessions: "3"
+      })
+    }
+  );
+
+  const data = await response.json();
+
+  console.log(data);
+
+  document.getElementById("output").innerHTML =
+    data.result;
+}
+
+window.testAI = testAI;
