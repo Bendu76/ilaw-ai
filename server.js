@@ -65,6 +65,19 @@ Use professional DepEd colors:
 - Major Sections (I, L, A, W): background-color #D9EAD3;
 - Sub-sections: background-color #EDEDED;
 
+IMPORTANT:
+
+The SECTIONS header cell must have the same style as the SESSION header cells.
+
+Use:
+background-color: #4472C4;
+color: white;
+font-weight: bold;
+font-size: 16px;
+text-align: center;
+
+The SECTIONS cell must NOT use the Major Section style.
+
 Maximum 5 sessions.
 
 SESSIONS must appear as COLUMN HEADERS.
@@ -72,6 +85,14 @@ SESSIONS must appear as COLUMN HEADERS.
 IMPORTANT:
 
 Create ONLY ONE session header row.
+
+The SECTIONS header cell must use the same style as SESSION headers:
+
+background-color: #4472C4;
+color: white;
+font-weight: bold;
+font-size: 16px;
+text-align: center;
 
 Display:
 
