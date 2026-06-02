@@ -163,7 +163,17 @@ IMPORTANT HEADER FORMAT:
 
 Before the Lesson Information table, create:
 
-1. DAILY LESSON LOG – ILAW FORMAT (DepEd Order 9, s. 2026)
+1. DAILY LESSON LOG - ILAW FORMAT (DepEd Order 9, s. 2026)
+
+IMPORTANT:
+
+Use only standard ASCII characters.
+
+Do NOT use:
+– — ‘ ’ “ ”
+
+Use only:
+- ' "
 
 Use:
 background-color: #173A7A;
@@ -172,7 +182,7 @@ font-size: 20px;
 font-weight: bold;
 text-align: center;
 
-2. LESSON INFORMATION
+2. 📘 LESSON INFORMATION
 
 Use:
 background-color: #D9E3F0;
