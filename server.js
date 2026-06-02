@@ -106,6 +106,38 @@ Every section and sub-section must have its own row separator.
 Sessions must remain as columns.
 
 
+IMPORTANT FORMATTING:
+
+Use:
+
+font-size: 16px;
+font-weight: bold;
+
+for:
+
+I - INTENTIONS
+L - LEARNING EXPERIENCE
+A - ASSESSMENT
+W - WAYS FORWARD
+
+Use:
+
+font-size: 12px;
+font-weight: bold;
+
+for:
+
+Learning Activities
+Learning Resources
+Formative Assessment
+Extended Learning Opportunities
+Reflection
+
+The sub-sections must appear visually smaller than the major sections.
+
+Use professional DepEd ILAW formatting.
+
+
 
 Declaration of AI Use should be placed below the References with a separate row.
 
