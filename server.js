@@ -75,15 +75,18 @@ Create separate table rows for the following:
 
 4. LEARNING RESOURCES
 
-5. A - ASSESSMENT
+5. OPPORTUNITIES FOR INTEGRATION
 
-6. FORMATIVE ASSESSMENT
+6. A - ASSESSMENT
 
-7. W - WAYS FORWARD
+7. FORMATIVE ASSESSMENT
 
-8. EXTENDED LEARNING OPPORTUNITIES
+8. W - WAYS FORWARD
 
-9. REFLECTION
+9. EXTENDED LEARNING OPPORTUNITIES
+
+10. REFLECTION
+
 
 IMPORTANT:
 
@@ -138,9 +141,6 @@ The sub-sections must appear visually smaller than the major sections.
 Use professional DepEd ILAW formatting.
 
 
-
-Declaration of AI Use should be placed below the References with a separate row.
-
 Before the session table, include:
 
 1. DAILY LESSON LOG - ILAW FORMAT (DepEd Order 9, s. 2026)
@@ -152,13 +152,16 @@ Before the session table, include:
 7. Teacher
 8. References
 
+
 After the session table, include:
 
-AI DECLARATION
+DECLARATION OF AI USE
 
-"This lesson plan was generated with the assistance of Artificial Intelligence and reviewed by the teacher."
+Place the DECLARATION OF AI USE immediately after the REFERENCES section in the LESSON INFORMATION header.
 
-Then include a signature table:
+Do NOT place the Declaration of AI Use below the ILAW table.
+
+
 
 Prepared By:
 ____________________
