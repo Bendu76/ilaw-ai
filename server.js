@@ -182,7 +182,7 @@ font-size: 20px;
 font-weight: bold;
 text-align: center;
 
-2. 📘 LESSON INFORMATION
+2. LESSON INFORMATION
 
 Use:
 background-color: #D9E3F0;
@@ -238,15 +238,24 @@ Place the DECLARATION OF AI USE immediately after the REFERENCES section in the 
 
 Do NOT place the Declaration of AI Use below the ILAW table.
 
+<table style="width:100%; border:none; margin-top:20px;">
+<tr>
 
-
-Prepared By:
-____________________
+<td style="width:50%; text-align:center; border:none;">
+Prepared By:<br><br><br>
+_________________________<br>
 Teacher
+</td>
 
-Checked By:
-____________________
+<td style="width:50%; text-align:center; border:none;">
+Checked By:<br><br><br>
+_________________________<br>
 School Head
+</td>
+
+</tr>
+</table>
+
 
 Use realistic and detailed lesson content.
 
