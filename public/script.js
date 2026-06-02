@@ -507,6 +507,9 @@ window.generateLessonPlan =
 
   document.getElementById("output").innerHTML =
     data.result;
+
+  return;
+  
 }
 
 window.testAI = testAI;
