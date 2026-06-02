@@ -158,7 +158,30 @@ Before the session table, include:
 7. Teacher
 8. References
 
+
 IMPORTANT HEADER FORMAT:
+
+Before the Lesson Information table, create:
+
+1. DAILY LESSON LOG – ILAW FORMAT (DepEd Order 9, s. 2026)
+
+Use:
+background-color: #173A7A;
+color: white;
+font-size: 20px;
+font-weight: bold;
+text-align: center;
+
+2. LESSON INFORMATION
+
+Use:
+background-color: #D9E3F0;
+color: #173A7A;
+font-size: 18px;
+font-weight: bold;
+
+The LESSON INFORMATION title must appear in its own bordered row before the lesson information table.
+
 
 The LESSON INFORMATION section must be displayed as a bordered table.
 
