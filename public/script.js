@@ -130,6 +130,11 @@ const data = await response.json();
 
 console.log(data);
 
+document.getElementById("output").innerHTML =
+  data.result;
+
+return;
+
 
 const language =
   detectLanguage(competency);
@@ -509,7 +514,7 @@ window.generateLessonPlan =
     data.result;
 
   return;
-  
+
 }
 
 window.testAI = testAI;
