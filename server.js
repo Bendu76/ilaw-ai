@@ -138,6 +138,7 @@ for:
 Learning Activities
 Learning Resources
 Formative Assessment
+Opportunities for Integration
 Extended Learning Opportunities
 Reflection
 
@@ -157,6 +158,44 @@ Before the session table, include:
 7. Teacher
 8. References
 
+IMPORTANT HEADER FORMAT:
+
+The LESSON INFORMATION section must be displayed as a bordered table.
+
+Use visible grid lines.
+
+Each item must have its own row:
+
+- Name of Lesson
+- Learning Area
+- Term and Week
+- Grade / Section
+- Teacher
+- References
+- Declaration of AI Use
+
+Use a two-column table:
+
+Column 1 = Label
+Column 2 = Value
+
+Apply borders to all cells.
+Do not display lesson information as plain text.
+
+IMPORTANT:
+
+Opportunities for Integration must use the same style as:
+
+- Learning Activities
+- Learning Resources
+- Formative Assessment
+- Extended Learning Opportunities
+- Reflection
+
+Use:
+font-size: 12px;
+font-weight: bold;
+background-color: #EDEDED;
 
 After the session table, include:
 
