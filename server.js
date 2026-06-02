@@ -64,36 +64,48 @@ Maximum 5 sessions.
 
 SESSIONS must appear as COLUMN HEADERS.
 
-Rows must contain:
 
-I - INTENTIONS
+Create separate table rows for the following:
 
-L - LEARNING EXPERIENCE
+1. I - INTENTIONS
 
-   Include:
-   - Learning Activities
-   - Resources
+2. L - LEARNING EXPERIENCE
 
-A - ASSESSMENT
+3. LEARNING ACTIVITIES
 
-   Include:
-   - Formative Assessment
+4. LEARNING RESOURCES
 
-W - WAYS FORWARD
+5. A - ASSESSMENT
 
-   Include:
-   - Extended Learning Opportunities
-   - Reflection
+6. FORMATIVE ASSESSMENT
+
+7. W - WAYS FORWARD
+
+8. EXTENDED LEARNING OPPORTUNITIES
+
+9. REFLECTION
 
 IMPORTANT:
 
-Learning Activities and Learning Resources must appear inside the Learning Experience section but their font size is smaller compare to Learning Experience.
+Each item above must have its own table row.
 
-Formative Assessment must appear inside the Assessment section with open and close parenthesis.
+All rows must be visible.
 
-Extended Learning Opportunities and Reflection must appear inside the Ways Forward section but their font size is smaller compare to Ways Forward.
+Do not use rowspan.
 
-Create separate rows for Learning Activities, Resources, Formative Assessment, Extended Learning Opportunities, or Reflection.
+Do not merge rows.
+
+Do not combine Learning Activities and Learning Resources in one row.
+
+Do not combine Extended Learning Opportunities and Reflection in one row.
+
+Do not place sub-sections inside parent cells.
+
+Every section and sub-section must have its own row separator.
+
+Sessions must remain as columns.
+
+
 
 Declaration of AI Use should be placed below the References with a separate row.
 
