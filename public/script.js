@@ -254,10 +254,6 @@ reflectionContent =
 }
 
 
-const sessions =
-  document.getElementById("sessions").value;
-
-
 let sessionRows = "";
 
 if (sessions >= 1) {
