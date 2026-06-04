@@ -4,7 +4,12 @@ const express = require("express");
 const cors = require("cors");
 const OpenAI = require("openai");
 const mongoose = require("mongoose");
+
+
 const authRoutes = require("./routes/auth");
+
+const verifyToken =
+require("./middleware/auth");
 
 const app = express();
 mongoose.connect(process.env.MONGO_URI)
@@ -27,10 +32,14 @@ app.get("/", (req, res) => {
   res.send("ILAW AI Server Running");
 });
 
-app.post("/generate", async (req, res) => {
+app.post(
+  "/generate",
+  verifyToken,
+  async (req, res) => {
+
 
   try {
-
+   
     const response =
       await client.chat.completions.create({
 

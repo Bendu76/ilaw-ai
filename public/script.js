@@ -56,6 +56,7 @@ async function login() {
   const password =
     document.getElementById("password").value;
 
+    
   const response =
     await fetch(
       "https://ilaw-ai.onrender.com/auth/login",
@@ -78,10 +79,14 @@ async function login() {
 
   if (data.success) {
 
+
+
     localStorage.setItem(
-      "teacher",
-      JSON.stringify(data.teacher)
-    );
+  "token",
+  data.token
+);
+
+
 
     window.location.href =
       "index.html";
@@ -108,7 +113,7 @@ const competency =
 
 const sessions =
 document.getElementById("sessions").value;
-
+/*
 const response = await fetch(
   "https://ilaw-ai.onrender.com/generate",
   {
@@ -125,6 +130,34 @@ const response = await fetch(
     })
   }
 );
+*/
+const response = await fetch(
+  "https://ilaw-ai.onrender.com/generate",
+  {
+    method: "POST",
+
+
+    headers: {
+      "Content-Type": "application/json",
+
+      "Authorization":
+        "Bearer " +
+        localStorage.getItem("token")
+    },
+
+
+    body: JSON.stringify({
+      grade,
+      subject,
+      topic,
+      competency,
+      sessions
+    })
+  }
+);
+
+
+
 
 const data = await response.json();
 
