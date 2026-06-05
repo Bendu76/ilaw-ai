@@ -95,7 +95,10 @@ async function login() {
   data.token
 );
 
-
+localStorage.setItem(
+    "credits",
+    data.credits
+  );
 
     window.location.href =
       "index.html";
@@ -614,4 +617,18 @@ window.printLessonPlan =
   }
 
   downloadDOCX();
+}
+
+const savedCredits =
+  localStorage.getItem(
+    "credits"
+  );
+
+if (savedCredits !== null) {
+
+  document.getElementById(
+    "creditsDisplay"
+  ).innerHTML =
+    "Credits: " + savedCredits;
+
 }
