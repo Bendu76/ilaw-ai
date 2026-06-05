@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const express = require("express");
@@ -5,6 +6,15 @@ const cors = require("cors");
 const OpenAI = require("openai");
 const mongoose = require("mongoose");
 
+const User = require("./models/User");
+
+const authRoutes = require("./routes/auth");
+
+const verifyToken =
+require("./middleware/auth");
+
+
+/*
 const user =
   await User.findById(req.user.id);
 
@@ -24,6 +34,7 @@ if (user.credits <= 0) {
   });
 
 }
+*/
 
 const User = require("./models/User");
 
@@ -69,25 +80,15 @@ app.post(
 
   try {
 
-    const user =
-      await User.findById(req.user.id);
-
-    if (!user) {
-
-      return res.status(404).json({
-        result: "User not found"
-      });
-
-    }
-
+    /*
     if (user.credits <= 0) {
 
       return res.status(403).json({
         result:
           "Please purchase credits first"
       });
-
     }
+    */
 
     const response =
       await client.chat.completions.create({
