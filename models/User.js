@@ -12,7 +12,7 @@ const UserSchema =
 
     credits: {
       type: Number,
-      default: 3
+      default: 1
     },
 
     isPaid: {
