@@ -5,6 +5,27 @@ const cors = require("cors");
 const OpenAI = require("openai");
 const mongoose = require("mongoose");
 
+const user =
+  await User.findById(req.user.id);
+
+if (!user) {
+
+  return res.status(404).json({
+    result: "User not found"
+  });
+
+}
+
+if (user.credits <= 0) {
+
+  return res.status(403).json({
+    result:
+      "Please purchase credits first"
+  });
+
+}
+
+const User = require("./models/User");
 
 const authRoutes = require("./routes/auth");
 
@@ -32,14 +53,42 @@ app.get("/", (req, res) => {
   res.send("ILAW AI Server Running");
 });
 
+/*
 app.post(
   "/generate",
   verifyToken,
   async (req, res) => {
 
+  try {
+   */
+
+  app.post(
+  "/generate",
+  verifyToken,
+  async (req, res) => {
 
   try {
-   
+
+    const user =
+      await User.findById(req.user.id);
+
+    if (!user) {
+
+      return res.status(404).json({
+        result: "User not found"
+      });
+
+    }
+
+    if (user.credits <= 0) {
+
+      return res.status(403).json({
+        result:
+          "Please purchase credits first"
+      });
+
+    }
+
     const response =
       await client.chat.completions.create({
 
