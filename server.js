@@ -36,13 +36,6 @@ if (user.credits <= 0) {
 }
 */
 
-const User = require("./models/User");
-
-const authRoutes = require("./routes/auth");
-
-const verifyToken =
-require("./middleware/auth");
-
 const app = express();
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB Connected"))
@@ -80,6 +73,26 @@ app.post(
 
   try {
 
+const user =
+  await User.findById(req.user.id);
+
+if (!user) {
+
+  return res.status(404).json({
+    result: "User not found"
+  });
+
+}
+
+if (user.credits <= 0) {
+
+  return res.status(403).json({
+    result:
+      "Please purchase credits first"
+  });
+
+}
+
     /*
     if (user.credits <= 0) {
 
@@ -92,6 +105,7 @@ app.post(
 
     const response =
       await client.chat.completions.create({
+
 
         model: "gpt-4.1-mini",
 
@@ -428,7 +442,6 @@ No triple backticks.
     res.status(500).json({
   result: "SERVER ERROR: " + error.message
 });
-
 
   }
 
