@@ -129,13 +129,17 @@ If Subject is:
 - Science
 - ICT
 - TLE
+- Values Education
+- Biology
+- Chemistry
 
 Generate ALL lesson content in ENGLISH.
 
 If Subject is:
 - Filipino
-- Araling Panlipunan
-- Edukasyon sa Pagpapakatao
+- Araling Panlipunan (AP)
+- Edukasyon sa Pagpapakatao (ESP)
+- Edukasyong Pantahanan at Pangkabuhayan (EPP)
 
 Generate ALL lesson content in FILIPINO.
 
