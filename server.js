@@ -83,7 +83,7 @@ if (!user) {
   });
 
 }
-
+/*
 if (user.credits <= 0) {
 
   return res.status(403).json({
@@ -92,7 +92,7 @@ if (user.credits <= 0) {
   });
 
 }
-
+*/
     /*
     if (user.credits <= 0) {
 
@@ -457,11 +457,85 @@ No triple backticks.
         ]
 
       });
-
+/*
     res.json({
       result:
       response.choices[0].message.content
     });
+*/
+
+let html =
+  response.choices[0].message.content;
+
+if (user.credits <= 0) {
+
+  const cutPosition =
+    Math.floor(html.length * 0.30);
+
+  html =
+    html.substring(0, cutPosition) +
+
+`
+<div style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+z-index:9999;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+
+<div style="
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+max-width:500px;
+">
+
+<h2>
+Unlock Full ILAW Lesson Plan
+</h2>
+
+<p>
+Purchase credits to view,
+download, and print the
+complete lesson plan.
+</p>
+
+<button
+onclick="window.location.href='payment.html'"
+style="
+padding:12px 25px;
+font-size:18px;
+cursor:pointer;
+">
+Buy Credits
+</button>
+
+</div>
+
+</div>
+`;
+
+}
+
+if (user.credits > 0) {
+
+  user.credits -= 1;
+
+  await user.save();
+
+}
+
+res.json({
+  result: html,
+  credits: user.credits
+});
 
   } catch (error) {
 

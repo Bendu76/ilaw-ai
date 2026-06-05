@@ -32,6 +32,15 @@ async function register() {
   const data =
     await response.json();
 
+    if (data.credits !== undefined) {
+
+  document.getElementById(
+    "creditsDisplay"
+  ).innerHTML =
+    "Credits: " + data.credits;
+
+}
+
   alert(data.message);
 
   if (data.success) {
@@ -582,3 +591,27 @@ async function printLessonPlan() {
 
 window.printLessonPlan =
   printLessonPlan;
+
+  function secureDownload() {
+
+  const currentCredits =
+    parseInt(
+      document.getElementById(
+        "creditsDisplay"
+      ).innerText.replace(
+        "Credits: ",
+        ""
+      )
+    );
+
+  if (currentCredits <= 0) {
+
+    alert(
+      "Purchase credits first."
+    );
+
+    return;
+  }
+
+  downloadDOCX();
+}
