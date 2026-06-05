@@ -158,13 +158,36 @@ const response = await fetch(
 
 
 
-
+/*
 const data = await response.json();
 
 console.log(data);
 
 document.getElementById("output").innerHTML =
   data.result;
+
+return;
+*/
+
+const data = await response.json();
+
+console.log(data);
+
+if (!response.ok) {
+
+  alert(data.result);
+
+  document.getElementById(
+    "output"
+  ).innerHTML = "";
+
+  return;
+
+}
+
+document.getElementById(
+  "output"
+).innerHTML = data.result;
 
 return;
 
@@ -519,3 +542,43 @@ Teacher
 window.generateLessonPlan =
   generateLessonPlan;
 
+async function printLessonPlan() {
+
+  const token =
+    localStorage.getItem("token");
+
+  if (!token) {
+
+    alert("Please login first.");
+
+    return;
+  }
+
+  const creditsText =
+    document.getElementById(
+      "creditsDisplay"
+    ).innerText;
+
+  const credits =
+    parseInt(
+      creditsText.replace(
+        "Credits:",
+        ""
+      ).trim()
+    );
+
+  if (credits <= 0) {
+
+    alert(
+      "Please purchase credits first."
+    );
+
+    return;
+  }
+
+  window.print();
+
+}
+
+window.printLessonPlan =
+  printLessonPlan;
