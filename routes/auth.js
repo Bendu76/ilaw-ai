@@ -150,12 +150,12 @@ router.post("/login", async (req, res) => {
       });
 
     }
-
+/*
     console.log(
   "JWT_SECRET LOGIN:",
   process.env.JWT_SECRET
 );
-
+*/
     const token =
       jwt.sign(
 
