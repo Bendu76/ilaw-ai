@@ -63,7 +63,7 @@ router.post("/register", async (req, res) => {
         password:
           hashedPassword,
 
-        credits: 3,
+        credits: 1,
 
         isPaid: false
 
