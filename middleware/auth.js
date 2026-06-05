@@ -5,9 +5,9 @@ function verifyToken(req, res, next) {
 
   const authHeader =
     req.headers.authorization;
-
+/*
   console.log("AUTH HEADER:", authHeader);
-
+*/
   if (!authHeader) {
 
     return res.status(401).json({
@@ -18,24 +18,24 @@ function verifyToken(req, res, next) {
 
   const token =
     authHeader.split(" ")[1];
-
+/*
   console.log("TOKEN:", token);
-
+*/
   try {
 
-    console.log(
+ /*   console.log(
   "JWT_SECRET VERIFY:",
   process.env.JWT_SECRET
-);
+);   */
 
     const verified =
       jwt.verify(
         token,
         process.env.JWT_SECRET
       );
-
+/*
     console.log("VERIFIED:", verified);
-
+*/
     req.user = verified;
 
     next();
