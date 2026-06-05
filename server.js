@@ -163,6 +163,34 @@ IMPORTANT:
 Create SESSION columns based on the selected number of sessions.
 
 Use professional DepEd colors:
+
+- SESSION header:
+background-color: #4472C4;
+color: white;
+
+- Major Sections (I, L, A, W):
+background-color: #D9EAD3;
+color: #000000;
+
+IMPORTANT:
+
+The text color of:
+
+I - INTENTIONS
+L - LEARNING EXPERIENCE
+A - ASSESSMENT
+W - WAYS FORWARD
+
+must always be BLACK (#000000).
+
+Never use white text for major sections.
+
+Use:
+font-size:16px;
+font-weight:bold;
+color:#000000;
+
+Use professional DepEd colors:
 - SESSION header: background-color #4472C4; color white;
 - Major Sections (I, L, A, W): background-color #D9EAD3;
 - Sub-sections: background-color #EDEDED;
@@ -259,6 +287,7 @@ Use:
 
 font-size: 16px;
 font-weight: bold;
+color: #000000;
 
 for:
 
@@ -266,6 +295,8 @@ I - INTENTIONS
 L - LEARNING EXPERIENCE
 A - ASSESSMENT
 W - WAYS FORWARD
+
+Never use white text.
 
 Use:
 
