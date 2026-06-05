@@ -119,17 +119,30 @@ Generate a complete and professional DepEd MATATAG ILAW Lesson Plan.
 
 IMPORTANT LANGUAGE RULE:
 
-Determine the language based on the Topic and Learning Competency.
+LANGUAGE DETECTION RULE:
 
-If the Topic or Learning Competency is written in Filipino,
-generate ALL lesson content in Filipino.
+If Subject is:
+- Creative Technology
+- Research
+- English
+- Mathematics
+- Science
+- ICT
+- TLE
 
-If the Topic or Learning Competency is written in English,
-generate ALL lesson content in English.
+Generate ALL lesson content in ENGLISH.
 
-Do NOT mix English and Filipino.
+If Subject is:
+- Filipino
+- Araling Panlipunan
+- Edukasyon sa Pagpapakatao
 
-The entire ILAW lesson plan must use only one language.
+Generate ALL lesson content in FILIPINO.
+
+Never mix English and Filipino.
+
+The entire lesson plan must use only one language.
+
 
 This rule applies to:
 
