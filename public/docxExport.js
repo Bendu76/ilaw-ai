@@ -1,8 +1,8 @@
 function downloadDOCX() {
-/*
+
   const isPaid =
     localStorage.getItem("isPaid");
-*/
+
   if (isPaid !== "true") {
 
     alert(
