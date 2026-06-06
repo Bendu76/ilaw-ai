@@ -57,8 +57,6 @@ window.register = register;
 
 async function login() {
 
-  
-
   const email =
     document.getElementById("email").value;
 
@@ -597,6 +595,15 @@ async function printLessonPlan() {
 window.printLessonPlan =
   printLessonPlan;
 
+
+  async function secureDownload() {
+
+  await downloadDOCX();
+
+}
+
+
+/*  
   function secureDownload() {
 
   const currentCredits =
@@ -634,3 +641,4 @@ if (savedCredits !== null) {
     "Credits: " + savedCredits;
 
 }
+    */
