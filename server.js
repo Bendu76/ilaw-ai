@@ -127,11 +127,18 @@ If Subject is:
 - English
 - Mathematics
 - Science
-- ICT
-- TLE
+- Information and Communications Technology (ICT)
+- Technology and Livelihood Education (TLE)
 - Values Education
 - Biology
 - Chemistry
+- Physics
+- Music
+- Arts
+- Physical Education
+- Health
+- Language
+- Reading Literacy
 
 Generate ALL lesson content in ENGLISH.
 
@@ -140,6 +147,8 @@ If Subject is:
 - Araling Panlipunan (AP)
 - Edukasyon sa Pagpapakatao (ESP)
 - Edukasyong Pantahanan at Pangkabuhayan (EPP)
+- Makabansa
+- Good Moral and Right Conduct (GMRC)
 
 Generate ALL lesson content in FILIPINO.
 
@@ -152,15 +161,17 @@ This rule applies to:
 
 - Lesson Information
 - I - Intentions
+- Learning Objectives
 - L - Learning Experience
-- Learning Activities
 - Learning Resources
+- Pre-Lesson Activity
+- Lesson Flow
 - Opportunities for Integration
-- A - Assessment
+- A - Assessing Learning
 - Formative Assessment
 - W - Ways Forward
+- Reflective Practice
 - Extended Learning Opportunities
-- Reflection
 
 If Filipino is detected, all session content, activities, assessments, and reflections must be written completely in Filipino.
 
