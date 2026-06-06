@@ -85,10 +85,7 @@ async function login() {
     await response.json();
 
   
-
   if (data.success) {
-
-
 
     localStorage.setItem(
   "token",
@@ -98,6 +95,11 @@ async function login() {
 localStorage.setItem(
     "credits",
     data.credits
+  );
+
+localStorage.setItem(
+    "isPaid",
+    data.isPaid
   );
 
     window.location.href =

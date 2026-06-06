@@ -208,6 +208,71 @@ router.post("/login", async (req, res) => {
 
 });
 
+// =========================
+// GET CURRENT USER
+// =========================
+
+const verifyToken =
+  require("../middleware/auth");
+
+router.get(
+  "/me",
+  verifyToken,
+  async (req, res) => {
+
+    try {
+
+      const user =
+        await User.findById(req.user.id);
+
+      if (!user) {
+
+        return res.status(404).json({
+
+          success: false,
+
+          message:
+            "User not found."
+
+        });
+
+      }
+
+      res.json({
+
+        success: true,
+
+        fullname:
+          user.fullname,
+
+        email:
+          user.email,
+
+        role:
+          user.role,
+
+        credits:
+          user.credits
+
+      });
+
+    } catch (error) {
+
+      console.log(error);
+
+      res.status(500).json({
+
+        success: false,
+
+        message:
+          "Server error"
+
+      });
+
+    }
+
+  }
+);
 
 // =========================
 // GET ALL USERS
