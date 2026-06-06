@@ -256,9 +256,43 @@ font-weight: bold;
 font-size: 16px;
 text-align: center;
 
-Display:
 
+The number of SESSION columns must EXACTLY match the selected Number of Sessions.
+
+If Number of Sessions = 1:
+
+Display:
+SECTIONS | SESSION 1
+
+If Number of Sessions = 2:
+
+Display:
+SECTIONS | SESSION 1 | SESSION 2
+
+If Number of Sessions = 3:
+
+Display:
+SECTIONS | SESSION 1 | SESSION 2 | SESSION 3
+
+If Number of Sessions = 4:
+
+Display:
+SECTIONS | SESSION 1 | SESSION 2 | SESSION 3 | SESSION 4
+
+If Number of Sessions = 5:
+
+Display:
 SECTIONS | SESSION 1 | SESSION 2 | SESSION 3 | SESSION 4 | SESSION 5
+
+
+Never create extra SESSION columns.
+
+Never create blank SESSION columns.
+
+Never create empty cells for sessions that were not selected.
+
+Generate only the exact number of SESSION columns requested by the user.
+
 
 ONLY ONCE at the beginning of the ILAW table.
 
