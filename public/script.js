@@ -554,6 +554,71 @@ Teacher
 window.generateLessonPlan =
   generateLessonPlan;
 
+
+async function printLessonPlan() {
+
+  const token =
+    localStorage.getItem("token");
+
+  if (!token) {
+
+    alert("Please login first.");
+
+    return;
+
+  }
+
+  const response =
+    await fetch(
+
+      "https://ilaw-ai.onrender.com/auth/me",
+
+      {
+
+        headers: {
+
+          Authorization:
+            "Bearer " + token
+
+        }
+
+      }
+
+    );
+
+  const user =
+    await response.json();
+
+  if (
+
+      user.role !== "admin"
+
+      &&
+
+      user.credits <= 0
+
+  ) {
+
+      alert(
+        "Please purchase credits first."
+      );
+
+      window.location.href =
+        "payment.html";
+
+      return;
+
+  }
+
+  window.print();
+
+}
+
+window.printLessonPlan =
+printLessonPlan;
+
+
+/*
 async function printLessonPlan() {
 
   const token =
@@ -594,6 +659,8 @@ async function printLessonPlan() {
 
 window.printLessonPlan =
   printLessonPlan;
+
+*/
 
 
   async function secureDownload() {
