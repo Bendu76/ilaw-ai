@@ -583,6 +583,7 @@ Buy Credits
 
 }
 
+/*
 if (user.credits > 0) {
 
   user.credits -= 1;
@@ -590,6 +591,20 @@ if (user.credits > 0) {
   await user.save();
 
 }
+*/
+
+if (user.role !== "admin") {
+
+  if (user.credits > 0) {
+
+    user.credits -= 1;
+
+    await user.save();
+
+  }
+
+}
+
 
 res.json({
   result: html,
