@@ -210,7 +210,7 @@ The text color of:
 
 I - INTENTIONS
 L - LEARNING EXPERIENCE
-A - ASSESSMENT
+A - ASSESSING LEARNING
 W - WAYS FORWARD
 
 must always be BLACK (#000000).
@@ -273,24 +273,27 @@ Create separate table rows for the following:
 
 1. I - INTENTIONS
 
-2. L - LEARNING EXPERIENCE
+2. LEARNING OBJECTIVES
 
-3. LEARNING ACTIVITIES
+3. L - LEARNING EXPERIENCE
 
 4. LEARNING RESOURCES
 
-5. OPPORTUNITIES FOR INTEGRATION
+5. PRE-LESSON ACTIVITY
 
-6. A - ASSESSMENT
+6. LESSON FLOW
 
-7. FORMATIVE ASSESSMENT
+7. OPPORTUNITIES FOR INTEGRATION
 
-8. W - WAYS FORWARD
+8. A - ASSESSING LEARNING
 
-9. EXTENDED LEARNING OPPORTUNITIES
+9. FORMATIVE ASSESSMENT
 
-10. REFLECTION
+10. W - WAYS FORWARD
 
+11. REFLECTIVE PRACTICE
+
+12. EXTENDED LEARNING OPPORTUNITIES
 
 IMPORTANT:
 
@@ -304,7 +307,25 @@ Do not merge rows.
 
 Do not combine Learning Activities and Learning Resources in one row.
 
-Do not combine Extended Learning Opportunities and Reflection in one row.
+
+Do not combine any sections.
+
+Each of the following must have its own independent row:
+
+Learning Objectives
+
+Pre-Lesson Activity
+
+Lesson Flow
+
+Reflective Practice
+
+Extended Learning Opportunities
+
+Never merge these rows.
+
+Always preserve the exact order.
+
 
 Do not place sub-sections inside parent cells.
 
@@ -337,17 +358,40 @@ font-weight: bold;
 
 for:
 
-Learning Activities
+Learning Objectives
 Learning Resources
+Pre-Lesson Activity
+Lesson Flow
 Formative Assessment
 Opportunities for Integration
+Reflective Practice
 Extended Learning Opportunities
-Reflection
 
 The sub-sections must appear visually smaller than the major sections.
 
 Use professional DepEd ILAW formatting.
 
+
+IMPORTANT HEADER MAPPING
+
+Name of Lesson = Learning Area
+
+Learning Area = Subject
+
+Main Topic = User Topic
+
+Never interchange these fields.
+
+Display:
+
+Name of Lesson
+Learning Area
+Main Topic
+Term and Week
+Grade / Section
+Teacher
+References
+Declaration of AI Use
 
 Before the session table, include:
 
@@ -448,11 +492,14 @@ IMPORTANT:
 
 Opportunities for Integration must use the same style as:
 
-- Learning Activities
-- Learning Resources
-- Formative Assessment
-- Extended Learning Opportunities
-- Reflection
+Learning Objectives
+Learning Resources
+Pre-Lesson Activity
+Lesson Flow
+Formative Assessment
+Opportunities for Integration
+Reflective Practice
+Extended Learning Opportunities
 
 Use:
 font-size: 12px;
