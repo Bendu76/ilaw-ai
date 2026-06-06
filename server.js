@@ -121,36 +121,40 @@ IMPORTANT LANGUAGE RULE:
 
 LANGUAGE DETECTION RULE:
 
-If Subject is:
-- Creative Technology
-- Research
-- English
-- Mathematics
-- Science
-- Information and Communications Technology (ICT)
-- Technology and Livelihood Education (TLE)
-- Values Education
-- Biology
-- Chemistry
-- Physics
-- Music
-- Arts
-- Physical Education
-- Health
-- Language
-- Reading Literacy
+If Subject is exactly or contains:
 
-Generate ALL lesson content in ENGLISH.
-
-If Subject is:
-- Filipino
-- Araling Panlipunan (AP)
-- Edukasyon sa Pagpapakatao (ESP)
-- Edukasyong Pantahanan at Pangkabuhayan (EPP)
-- Makabansa
-- Good Moral and Right Conduct (GMRC)
+Filipino
+AP
+Araling Panlipunan
+ESP
+Edukasyon sa Pagpapakatao
+EPP
+Edukasyong Pantahanan at Pangkabuhayan
+Makabansa
+GMRC
+Good Moral and Right Conduct
 
 Generate ALL lesson content in FILIPINO.
+
+If Subject contains:
+
+Creative Technology
+English
+Science
+Math
+Mathematics
+ICT
+Information and Community Technology
+TLE
+Technology and Livelihood Education
+Research
+Music
+Arts
+PE
+Physical Education
+Health
+
+Generate ALL lesson content in ENGLISH.
 
 Never mix English and Filipino.
 
