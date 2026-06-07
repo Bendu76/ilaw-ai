@@ -200,9 +200,8 @@ if (!response.ok) {
 document.getElementById(
   "output"
 ).innerHTML = data.result;
-
+/*
 return;
-
 
 const language =
   detectLanguage(competency);
@@ -211,7 +210,32 @@ console.log(
   "Detected Language:",
   language
 );
+*/
 
+const subjectLanguage = {
+
+  "English": "english",
+  "Science": "english",
+  "Mathematics": "english",
+  "Creative Technology": "english",
+  "ICT": "english",
+
+  "Filipino": "filipino",
+  "Araling Panlipunan": "filipino",
+  "ESP": "filipino",
+  "EPP": "filipino",
+  "TLE": "filipino",
+  "MAPEH": "filipino"
+
+};
+
+const language =
+  subjectLanguage[subject] || "english";
+
+console.log(
+  "Selected Language:",
+  language
+);
 
 let objectivesLabel;
 let assessmentLabel;
