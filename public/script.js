@@ -642,7 +642,7 @@ window.printLessonPlan =
 printLessonPlan;
 
 
-/*
+
 async function printLessonPlan() {
 
   const token =
@@ -684,7 +684,7 @@ async function printLessonPlan() {
 window.printLessonPlan =
   printLessonPlan;
 
-*/
+
 
 
   async function secureDownload() {
@@ -694,7 +694,7 @@ window.printLessonPlan =
 }
 
 
-/*  
+
   function secureDownload() {
 
   const currentCredits =
@@ -732,4 +732,4 @@ if (savedCredits !== null) {
     "Credits: " + savedCredits;
 
 }
-    */
+    
